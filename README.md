@@ -13,3 +13,6 @@ Esse é um projeto solicitado em aula pela orientadora Aline Firmino, com o obje
 * `main.js`-arquivo JavaScript para adicionar os códigos do site.
 
 * `classes`-classes do projeto
+
+## Pesquisa sobre o projeto
+pa pa pa pa 
