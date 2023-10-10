@@ -8,6 +8,8 @@ Esse é um projeto solicitado em aula pela orientadora Aline Firmino, com o obje
 
 ## Estrutura do projeto
 
-* `index.html` - estrutura básica do site.
-* `main.js` - arquivo JavaScript para adicionar os códigos do site.
-* `classes` - classes do projeto
+* `index.html`-estrutura básica do site.
+
+* `main.js`-arquivo JavaScript para adicionar os códigos do site.
+
+* `classes`-classes do projeto
