@@ -1,16 +1,23 @@
 class Ghost{
-    constructor(x, y, cor){
+    constructor(x, y, w, h, obj){
         this.x = x;
         this.y = y;
-        this.cor = c;
+        this.w = w;
+        this.h = h;
+        this.obj = obj;
     }
 
-    mover(){
+    desenhar(x, y){
+        ctx.fillStyle = "white";
+        ctx.fillRect(x, y, this.w, this.h)
+    }
+    mover(tecla){
+        if (tecla === "w"){
 
+        }
     }
 
-    mudarCor(){
+    mudarCor(tecla){
         
     }
-    
 }
