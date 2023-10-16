@@ -41,7 +41,7 @@ draw();
 ```
 resultado:
 
-<img src="img/exemplo1.png"/>
+<img src="img/exemplo.png"/>
 
 __Rotação__
 
