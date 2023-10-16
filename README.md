@@ -51,7 +51,8 @@ Para exemplificar, pense no canvas como uma tela de borracha. Os valores de A e 
 
 Exemplo de sintaxe:
 
-```const canvas = document.getElementById("canvas");
+```ruby
+const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 ctx.beginPath();
 ctx.setTransform(1, 0, 0.5, 1, 0, 0);
@@ -65,7 +66,8 @@ __Clipping path__
 
 O clipping path funciona como uma janela para o canvas, mostrando apenas oque está dentro de seu desenho e escondendo oque fica de fora. A sintaxe usa a função `clip()`:
 
-```ctx.beginPath();
+```ruby
+ctx.beginPath();
 ctx.arc(0, 0, 60, 0, Math.PI * 2, true);
 ctx.clip();
 ```
