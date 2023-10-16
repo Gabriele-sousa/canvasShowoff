@@ -39,6 +39,7 @@ function draw() {
 
 draw();
 ```
+resultado:
 
 __Rotação__
 
