@@ -21,6 +21,25 @@ __Translação__
 O conceito de "`translate(x, y)`" , refere-se ao movimento de objetos ou elementos em um espaço bidimensional de uma posição para outra. A translação é uma operação de transformação que move um objeto de um local para outro, sem alterar sua
 orientação ou forma.
 
+```ruby
+function draw() {
+  const ctx = document.getElementById("canvas").getContext("2d");
+  for (let i = 0; i < 4; i++) {
+    for (let j = 0; j < 4; j++) {
+      ctx.save();
+      ctx.fillStyle = `rgb(${51 * i}, ${300 - 50 * i}, 300)`;
+      ctx.translate(10 + j * 50, 10 + i * 50);
+      ctx.beginPath();
+      ctx.arc(0 , 0 , 10, 0, Math.PI * 2);
+      ctx.fill()
+      ctx.restore();
+    }
+  }
+}
+
+draw();
+```
+
 __Rotação__
 
 O conceito de "`rotate()`"  é processo de girar um objeto, elemento ou gráfico em um espaço bidimensional, geralmente em torno de um ponto de referência. A rotação é uma transformação que altera a orientação de um objeto sem modificar sua forma
