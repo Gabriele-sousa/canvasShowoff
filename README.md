@@ -41,6 +41,8 @@ draw();
 ```
 resultado:
 
+<img src="img/exemplo1.png"/>
+
 __Rotação__
 
 O conceito de "`rotate()`"  é processo de girar um objeto, elemento ou gráfico em um espaço bidimensional, geralmente em torno de um ponto de referência. A rotação é uma transformação que altera a orientação de um objeto sem modificar sua forma
