@@ -24,7 +24,8 @@ orientação ou forma.
 ```ruby
 function draw() {
   const ctx = document.getElementById("canvas").getContext("2d");
-  for (let i = 0; i < 4; i++) {
+
+ for (let i = 0; i < 4; i++) {
     for (let j = 0; j < 4; j++) {
       ctx.save();
       ctx.fillStyle = `rgb(${51 * i}, ${300 - 50 * i}, 300)`;
@@ -48,10 +49,33 @@ __Rotação__
 O conceito de "`rotate()`"  é processo de girar um objeto, elemento ou gráfico em um espaço bidimensional, geralmente em torno de um ponto de referência. A rotação é uma transformação que altera a orientação de um objeto sem modificar sua forma
 ou posição. 
 
+```ruby
+const canvas = document.getElementById("canvas");
+const ctx = canvas.getContext("2d");
+
+ctx.rotate((45 * Math.PI) / 180);
+ctx.fillStyle = "gray";
+ctx.fillRect(100, 0, 80, 20);
+```
+
 __Escala__
 
 O conceito de "`scale(x, y)`" em JavaScript, refere-se ao processo de redimensionar um objeto, elemento ou gráfico em um espaço bidimensional. A escala é uma transformação que altera as dimensões de um objeto, aumentando ou diminuindo seu tamanho
 em relação a um ponto de referência.
+
+```ruby
+const canvas = document.getElementById("canvas");
+const ctx = canvas.getContext("2d");
+
+ctx.rotate((-25 * Math.PI) / 180);
+ctx.fillStyle = "gray";
+ctx.fillRect(10, 10, 8, 20);
+
+ctx.scale(10, 10);
+ctx.fillStyle = "red";
+ctx.fillRect(10, 10, 8, 20);
+
+```
 
 __Transform__
 
@@ -76,6 +100,7 @@ Exemplo de sintaxe:
 ```ruby
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
+
 ctx.beginPath();
 ctx.setTransform(1, 0, 0.5, 1, 0, 0);
 ctx.fillstyle = "black";
