@@ -40,7 +40,8 @@ function draw() {
 
 draw();
 ```
-resultado:
+
+Resultado:
 
 <img src="img/exemplo.png"/>
 
@@ -57,6 +58,10 @@ ctx.rotate((45 * Math.PI) / 180);
 ctx.fillStyle = "gray";
 ctx.fillRect(100, 0, 80, 20);
 ```
+
+Resultado:
+
+<img src="img/exemplo1.png"/>
 
 __Escala__
 
@@ -76,6 +81,10 @@ ctx.fillStyle = "red";
 ctx.fillRect(10, 10, 8, 20);
 
 ```
+
+Resultado:
+
+<img src="img/exemplo2.png"/>
 
 __Transform__
 
@@ -107,7 +116,10 @@ ctx.fillstyle = "black";
 ctx.arc(100, 100, 20, 0, 2 * Math.PI);
 ctx.fill();
 ```
+
 Resultado:
+
+<img src="img/exemplo3.png"/>
 
 __Clipping path__
 
@@ -118,5 +130,9 @@ ctx.beginPath();
 ctx.arc(0, 0, 60, 0, Math.PI * 2, true);
 ctx.clip();
 ```
+
+Resultado:
+
+<img src="img/exemplo4.png"/>
 
 O exemplo acima demonstra um círculo feito no canvas. O método “`clip()`” é utilizado no lugar do “`closePath()`”, isso torna esse caminho uma janela para os próximos desenhos do canvas.
