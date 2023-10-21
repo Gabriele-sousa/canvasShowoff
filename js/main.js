@@ -11,14 +11,17 @@ h = canvas.height;
 function piso(x, y){
     ctx.fillStyle = "white";
     ctx.fillRect(x, y, 150, 15);
-    ghost.trava(x, y)
+    ghost.travaX = x;
+    ghost.travaY = y;
+    ghost.trava()
 }
 
 ctx.fillStyle = "black";
 ctx.fillRect(0, 0, w, h);
 
-ghost.desenhar(250, 850, "white");
 piso(300,800);
+ghost.desenhar(250, 850, "white");
+
 
 document.addEventListener("keypress", function(e){
     console.log(e.key)
