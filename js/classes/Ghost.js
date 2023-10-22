@@ -14,52 +14,41 @@ class Ghost{
         this.y = y;
         gst.fillRect(this.x, this.y, 40, 40)
     }
-    mover(tecla){
+    mover(x, y){
         this.trava();
-        if (tecla === "d"){
-            //apaga o ultimo desenho
-            gst.fillStyle = "black";
-            gst.fillRect(this.x, this.y, -50, 50);
-            //desenha o boneco novamente
-            this.desenhar(this.x, this.y, "white");
-            gst.translate(20,0);
-            
-        }else if (tecla === "a"){
-            //apaga o ultimo desenho
-            gst.fillStyle = "black";
-            gst.fillRect(this.x, this.y, 50, 50);
-            //desenha o boneco novamente
-            this.desenhar(this.x, this.y, "white");
-            gst.translate(-20,0);
+        //apaga o ultimo desenho
+        if(this.y > this.travaY){
+            gst.fillStyle = "red";        
+        }else{
+            gst.fillStyle = "#001133";
+        }
+        gst.fillRect(this.x, this.y, 40, 40);
+        
+        //desenha o boneco novamente
+        this.x += x;
+        this.y += y;
+        this.desenhar(this.x, this.y, "white");
 
-        }else if(tecla === "w"){
-            gst.fillStyle = "black";
-            gst.fillRect(this.x, this.y, 50, 50);
-            
-            this.desenhar(this.x, this.y, "white");
-            gst.translate(0,-40);
-
-            //voltar ao chão
-            setTimeout(() => {
-                gst.fillStyle = "black";
-                gst.fillRect(this.x, this.y, 50, -50);
-            
-                this.desenhar(this.x, this.y, "white");
-                gst.translate(0, 40);
-                console.log("oi")
-              }, 1000);
+        //se o boneco estiver abaixo do chão, retorna ele para cima
+        if(ghost.y < ghost.travaY + canvas.height && ghost.y + 40 > ghost.travaY){
+            gst.fillStyle = "red";
+            gst.fillRect(this.x, this.y, w, 40);
+            ghost.y = canvas.height - 60;
         }
     }
     trava(){
-        if(this.x > this.travaX && this.x < (this.travaX + 150)){
-            return;
+        //verifica se o boneco esra acima do chão
+        if(this.y + 40 < this.travaY){
+            setTimeout(() => {
+                //apaga o boneco
+                gst.fillStyle = "#001133";
+                gst.fillRect(this.x, this.y, 40, 40);
+
+                //reposiciona acima do chão
+                this.y += 45;
+                this.desenhar(this.x, this.y, "white");
+            }, 300);
         }
-        if(this.y > this.travaY && this.y < (this.travaX + 15)){
-            return;
-        }
-        console.log("block");
-    }
-    mudarCor(tecla){
-        
     }
 }
+//this.x < x + w && this.x + 40 > x && this.y < y + h && this.y + 40 > y
