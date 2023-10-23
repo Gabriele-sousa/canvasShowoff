@@ -18,15 +18,15 @@ ctx.beginPath();
     fundo.janela(w, h);
     fundo.chuva();
 ctx.closePath()
-
+ghost.r = 0;
+ghost.t = 0;
 //desenha o chão
 piso(0, (h-20), w, h);
 
 ghost.x = 270;
 ghost.y = h - 60;
-gst.beginPath();
-    ghost.desenhar(ghost.x, ghost.y);
-
+function fantasma(x,y){
+    ghost.desenhar(x, y);
     //identifica botão
     document.addEventListener("keydown", function(e){
         ghost.travaY = h-20;
@@ -38,19 +38,27 @@ gst.beginPath();
             ghost.mover(-20, 0);
         }else if(e.key === "w"){
             ghost.mover(0, -40);
+        }else if(e.key === "s"){
+            ghost.r++;
         }
     });
-    ghost.s = 0;
+    document.addEventListener("keyup", function(){
+        setTimeout(() => {
+            ghost.r = 0;
+            ghost.s = 1;
+            ghost.t = 0;
+        }, 1000);
+    });
+    ghost.s = 1;
     document.addEventListener("wheel", function(whell){
         console.log(whell.deltaY)
         if(whell.deltaY > 0){
             ghost.s = ghost.s - 0.1;
             console.log(ghost.s)
-            ghost.scale();
         }else if(whell.deltaY < 0){
             ghost.s = ghost.s + 0.1;
-            ghost.scale();
         }
     });
-gst.closePath();
+}
+fantasma(ghost.x, ghost.y);
 

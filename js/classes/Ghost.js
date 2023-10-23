@@ -1,18 +1,22 @@
 class Ghost{
-    constructor(x, y, h, vel, s, travaY){
+    constructor(x, y, h, r, s, t, travaY){
         this.x = x;
         this.y = y;
         this.h = h;
-        this.v = vel;
+        this.r = r;
         this.s = s;
+        this.t = t;
         this.travaY = travaY;
     }
 
     desenhar(x, y){
+        gst.scale(this.s, this.s);
         gst.beginPath();
+        gst.rotate((this.r * Math.PI) / 180);
         gst.strokeStyle="black";
         gst.lineWidth="1";
         gst.fillStyle="white";
+        
         gst.beginPath(); 
         gst.moveTo(x, y);
         gst.quadraticCurveTo(x + 19, y - 90, x + 40, y);
@@ -30,7 +34,7 @@ class Ghost{
         gst.closePath();
         for(let i = 0; i <= 1; i++){
             gst.save();
-            gst.fillStyle = "black"; // eye circles
+            gst.fillStyle = "black"; 
             gst.translate(i * 10 ,0);
             gst.beginPath();
             gst.arc(x + 14, y - 29, 2, 0, Math.PI * 8, true);
@@ -63,6 +67,19 @@ class Ghost{
             gst.fillRect(this.x, this.y, w, 40);
             ghost.y = canvas.height - 60;
         }
+
+        //passa para o outro lado da tela quando clicado
+        if(this.x < 0){
+            gst.fillStyle = "#001133";
+            gst.fillRect(this.x, this.y+2, 40, -48);
+            this.x = canvas.width - 40;
+            this.desenhar(this.x, this.y)
+        }else if (this.x > canvas.width){
+            gst.fillStyle = "#001133";
+            gst.fillRect(this.x, this.y+2, 40, -48);
+            this.x = 40;
+            this.desenhar(this.x, this.y)
+        }
     }
     trava(){
         //verifica se o boneco esta acima do chão
@@ -76,8 +93,5 @@ class Ghost{
                 this.desenhar(this.x, this.y);
             }, 300);
         }
-    }
-    scale(){
-        gst.setTransform(this.s,0,0,this.s,0,0);
     }
 }

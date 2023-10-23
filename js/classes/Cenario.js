@@ -18,8 +18,8 @@ class Cenario{
         const tamanho = 17;
         const colunas = canvas.width / tamanho;
         const quedas = new Array(Math.floor(colunas)).fill(1);
-        function desenhar(){
-            // definindo a corda fonte
+        function chuvisco(){
+            // definindo a cor da fonte
             let c;
             let num = Math.floor(Math.random() * 10);
             if(num % 2 === 0){
@@ -43,9 +43,9 @@ class Cenario{
               quedas[i]++;
           }
           //deixa mais fluido
-          window.requestAnimationFrame(desenhar);
+          window.requestAnimationFrame(chuvisco);
         }
-        desenhar();
+        chuvisco();
     }
     
 }
