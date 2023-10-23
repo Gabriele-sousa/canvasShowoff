@@ -20,18 +20,22 @@ fundo.chuva();
 
 //desenha o chão
 piso(0, (h-20), w, h);
-ghost.desenhar(250, h - 60, "white");
+
+ghost.x = 270;
+ghost.y = h - 60;
+ghost.desenhar(ghost.x, ghost.y);
 
 //identifica botão
 document.addEventListener("keydown", function(e){
     ghost.travaX = w;
     ghost.travaY = h-20;
+
     //movimento
     if(e.key === "d"){
         ghost.mover(20, 0);
     }else if(e.key === "a"){
         ghost.mover(-20, 0);
     }else if(e.key === "w"){
-        ghost.mover(0, -45);
+        ghost.mover(0, -40);
     }
 });

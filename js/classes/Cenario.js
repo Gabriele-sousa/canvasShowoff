@@ -14,8 +14,8 @@ class Cenario{
     }
     chuva(){
         //montando as gotas
-        const gotas = ["l","°"];
-        const tamanho = 18;
+        const gotas = ["l","|", "I"];
+        const tamanho = 17;
         const colunas = canvas.width / tamanho;
         const quedas = new Array(Math.floor(colunas)).fill(1);
         function desenhar(){
