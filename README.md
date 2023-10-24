@@ -136,3 +136,32 @@ Resultado:
 <img src="img/exemplo4.png"/>
 
 O exemplo acima demonstra um círculo feito no canvas. O método “`clip()`” é utilizado no lugar do “`closePath()`”, isso torna esse caminho uma janela para os próximos desenhos do canvas.
+
+## códigos do git
+git config --global user.name "username do github"
+
+git config --global user.email "email do 
+
+github"
+
+git init
+
+git remote add origin "link do projeto"
+
+git pull --allow-unrelated-histories "link do projeto"
+
+git add .
+
+git commit -am "nome do push que voce escolher"
+
+git push origin main
+
+## desenvolvimento do projeto
+
+  O arquivo Index.html é a base do projeto. Ele abriga dois canvas separados, um para o fantasma e outro para o cenario. Em seguida ele chama pelos script principal e suas classes.
+  As classes do projeto são duas. Uma para o cenario e outra para o fantama. A classe cenario tem como atributos sua posição de X e Y, seus metodos são o desenho de uma janela feita atravez de um clipping path e uma função que gera uma chuva constante feita por caracteres. A classe fantasma é a classe que se move pela tela. Tem um método que desenha o fantasma, outro para se mover (apagando e redesenhando o fantasma em uma nova posição) e um para que retorne ao chão quando pula. O fantasma também possui algumas deformações ativadas ao apertar "S" e rolar a roda do mouse
+  O script principal define ambos os canvas com nomes distintos e define seus contextos em 2d. Seguindo, o script define alguns valores como a posição do fantasma e do chão e instancia as funções do fantasma, identificando bot~es apertados e acionando a função de acordo.
+<img src="img/demonst1.png"/>
+<img src="img/demosnt2.png"/>
+<img src="img/demonst3.png"/>
+
