@@ -136,3 +136,24 @@ Resultado:
 <img src="img/exemplo4.png"/>
 
 O exemplo acima demonstra um círculo feito no canvas. O método “`clip()`” é utilizado no lugar do “`closePath()`”, isso torna esse caminho uma janela para os próximos desenhos do canvas.
+
+## códigos do git
+git config --global user.name "username do 
+github"
+
+git config --global user.email "email do 
+
+github"
+
+git init
+
+git remote add origin "link do projeto"
+
+git pull --allow-unrelated-histories "link do projeto"
+
+git add .
+
+git commit -am "nome do push que voce escolher"
+
+git push origin main
+
