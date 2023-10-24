@@ -5,12 +5,9 @@ class Cenario{
     }
     janela(w, h){
         //define a forma da janela
-        ctx.beginPath();
-        ctx.arc(w / 2, h / 2, (h / 2) + h / 2, 0, Math.PI * 2, true);
-        ctx.clip();
-        //coloca um fundo
-        ctx.fillStyle = "#001133";
-        ctx.fillRect(0, 0, w, h);
+        gst.beginPath();
+        gst.arc(w / 2, h / 2, (h / 2) + h / 2, 0, Math.PI * 2, true);
+        gst.clip();
     }
     chuva(){
         //montando as gotas

@@ -9,6 +9,7 @@ class Ghost{
         this.travaY = travaY;
     }
 
+    //desenho do fantasma
     desenhar(x, y){
         gst.scale(this.s, this.s);
         gst.beginPath();
@@ -43,18 +44,13 @@ class Ghost{
         }
     }
     mover(x, y){
-        //faz o fantasma cair e impede que atravesse
+        //faz o fantasma cair e impede que atravesse o chão
         if(y<0){
             this.trava();
         }
 
         //apaga o ultimo desenho
-        if(this.y > this.travaY){
-            gst.fillStyle = "red";        
-        }else{
-            gst.fillStyle = "#001133";
-        }
-        gst.fillRect(this.x, this.y+2, 40, -48);
+        gst.clearRect(this.x, this.y+2, 40, -48);
         
         //desenha o boneco novamente
         this.x += x;
@@ -64,19 +60,19 @@ class Ghost{
         //se o boneco estiver abaixo do chão, retorna ele para cima
         if(ghost.y < ghost.travaY + canvas.height && ghost.y + 40 > ghost.travaY){
             gst.fillStyle = "red";
-            gst.fillRect(this.x, this.y, w, 40);
+            gst.clearRect(this.x, this.y, w, 40);
             ghost.y = canvas.height - 60;
         }
 
         //passa para o outro lado da tela quando clicado
         if(this.x < 0){
             gst.fillStyle = "#001133";
-            gst.fillRect(this.x, this.y+2, 40, -48);
+            gst.clearRect(this.x, this.y+2, 40, -48);
             this.x = canvas.width - 40;
             this.desenhar(this.x, this.y)
         }else if (this.x > canvas.width){
             gst.fillStyle = "#001133";
-            gst.fillRect(this.x, this.y+2, 40, -48);
+            gst.clearRect(this.x, this.y+2, 40, -48);
             this.x = 40;
             this.desenhar(this.x, this.y)
         }
@@ -87,7 +83,7 @@ class Ghost{
             setTimeout(() => {
                 //apaga o boneco
                 gst.fillStyle = "#001133";
-                gst.fillRect(this.x, this.y+2, 40, -48);
+                gst.clearRect(this.x, this.y+2, 40, -48);
                 //reposiciona acima do chão
                 this.y += 40;
                 this.desenhar(this.x, this.y);
