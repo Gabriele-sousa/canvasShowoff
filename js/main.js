@@ -12,8 +12,8 @@ const fundo = new Cenario();
 canvas.style.position = "absolute";
 canvas2.style.position = "absolute";
 //tamanho do canas
-canvas.width = window.innerWidth - 100;
-canvas.height = window.innerHeight - 100;
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
 canvas2.width = canvas.width;
 canvas2.height = canvas.height;
 w = canvas.width;
