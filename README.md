@@ -166,4 +166,7 @@ git push origin main
 <img src="img/demonst1.png"/>
 <img src="img/demosnt2.png"/>
 <img src="img/demonst3.png"/>
+<img src="img/usos.png"/>
+<img src="img/documentacao.png"/>
+<img src="img/uml.png"/>
 
